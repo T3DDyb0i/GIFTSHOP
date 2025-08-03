@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - จัดการสินค้า</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #a5d6a7, #ffffff);
+      padding: 30px;
+      margin: 0;
+    }
+
+    h1 {
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-left: 8px solid #ffe366;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .group {
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #ffd92d;
+      color: #2e7d32;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #fbc02d;
+    }
+  </style>
+</head>
+<body>
+  <h1>💻 ผู้ดูแลระบบ - เพิ่มสินค้าในคลัง</h1>
+  <form>
+    <div class="group">
+      <label>ชื่อสินค้า</label>
+      <input type="text" name="product_name" placeholder="เช่น เสื้อที่ระลึก 30 ปี" required>
+    </div>
+
+    <div class="group">
+      <label>รายละเอียดสินค้า</label>
+      <textarea name="description" placeholder="เช่น เนื้อผ้าคุณภาพดี ใส่สบาย เหมาะกับทุกวัย"></textarea>
+    </div>
+
+    <div class="group">
+      <label>ประเภทสินค้า</label>
+      <select name="category" required>
+        <option value="">-- กรุณาเลือก --</option>
+        <option>เสื้อ</option>
+        <option>กระเป๋า</option>
+        <option>แก้ว</option>
+        <option>หมวก</option>
+        <option>ร่ม</option>
+        <option>เข็มกลัด</option>
+        <option>สมุด</option>
+        <option>ปากกา</option>
+      </select>
+    </div>
+
+    <div class="group">
+      <label>สี (ถ้ามี)</label>
+      <input type="text" name="color" placeholder="เช่น ขาว, ดำ, น้ำเงิน">
+    </div>
+
+    <div class="group">
+      <label>ขนาด (ถ้ามี)</label>
+      <input type="text" name="size" placeholder="เช่น S, M, L, XL">
+    </div>
+
+    <div class="group">
+      <label>ราคา (บาท)</label>
+      <input type="number" name="price" min="0" required>
+    </div>
+
+    <div class="group">
+      <label>จำนวนสินค้าในสต็อก</label>
+      <input type="number" name="stock" min="0" placeholder="เช่น 50" required>
+    </div>
+
+    <div class="group">
+      <label>อัปโหลดรูปภาพสินค้า</label>
+      <input type="file" name="image" accept="image/*">
+    </div>
+
+    <button type="submit">📦 บันทึกสินค้า</button>
+  </form>
+</body>
+</html>
